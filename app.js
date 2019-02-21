@@ -11,7 +11,6 @@ const newQuote = () => {
             return response.json();
         })
         .then(function(myJson) {
-            console.log(myJson.quote);
             text.textContent = myJson.quote.body;
             author.textContent = "- " + myJson.quote.author;
             tweet.setAttribute('href', `https://twitter.com/intent/tweet?hashtags=quotes&text=%20${encodeURI(text.textContent)}%20-%20${encodeURI(author.textContent)}`);
